@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ISHIKAAAAAAAA ❤️</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#ff7eb3,#ff758c,#ffb199);color:white;text-align:center;overflow-x:hidden}
+section{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px}
+h1{font-size:clamp(2.5rem,8vw,5rem);margin:10px}
+.card{background:rgba(255,255,255,.15);backdrop-filter:blur(10px);padding:25px;border-radius:25px;max-width:850px}
+#countdown{display:flex;gap:15px;flex-wrap:wrap;justify-content:center}
+.box{background:rgba(255,255,255,.2);padding:15px 20px;border-radius:20px;min-width:90px}
+.num{font-size:2rem;font-weight:bold}
+.reason{margin:8px;padding:12px;border-radius:12px;background:rgba(255,255,255,.18)}
+button{padding:14px 24px;border:none;border-radius:30px;font-size:1rem;cursor:pointer}
+.heart{position:fixed;bottom:-20px;animation:f 8s linear infinite}
+@keyframes f{to{transform:translateY(-110vh);opacity:0}}
+</style>
+</head>
+<body>
+
+<section>
+<div class="card">
+<h1>🎂 ISHIKAAAAAAAA 🎂</h1>
+<h2>Your birthday is coming...</h2>
+<div id="countdown"></div>
+<p>Every second gets us closer to your special day ❤️</p>
+<button onclick="document.getElementById('letter').scrollIntoView({behavior:'smooth'})">Open Your Surprise</button>
+</div>
+</section>
+
+<section id="letter">
+<div class="card">
+<h1>💌 A Little Note</h1>
+<p>
+To the girl who somehow makes ordinary days feel special,
+thank you for every smile, every laugh, every memory and every moment.
+This is just a tiny countdown to a very big day.
+❤️
+</p>
+</div>
+</section>
+
+<section>
+<div class="card">
+<h1>✨ Reasons You're Amazing</h1>
+<div class="reason">You make life more fun.</div>
+<div class="reason">You make people around you smile.</div>
+<div class="reason">You are effortlessly lovable.</div>
+<div class="reason">You make memories unforgettable.</div>
+<div class="reason">Because you're ISHIKAAAAAAAA. ❤️</div>
+</div>
+</section>
+
+<section>
+<div class="card">
+<h1>🎉 Birthday Unlock</h1>
+<p>When the countdown reaches zero, it's officially your day.</p>
+<h2>Love, Raghav ❤️</h2>
+</div>
+</section>
+
+<script>
+const target = new Date("2026-08-06T00:00:00").getTime();
+function update(){
+ const now = Date.now();
+ let d = target-now;
+ const days=Math.floor(d/86400000);
+ const hrs=Math.floor(d%86400000/3600000);
+ const mins=Math.floor(d%3600000/60000);
+ const secs=Math.floor(d%60000/1000);
+ document.getElementById('countdown').innerHTML=`
+ <div class='box'><div class='num'>${days}</div>Days</div>
+ <div class='box'><div class='num'>${hrs}</div>Hours</div>
+ <div class='box'><div class='num'>${mins}</div>Minutes</div>
+ <div class='box'><div class='num'>${secs}</div>Seconds</div>`;
+}
+setInterval(update,1000);update();
+
+setInterval(()=>{
+ const h=document.createElement('div');
+ h.className='heart';
+ h.innerHTML='❤️';
+ h.style.left=Math.random()*100+'vw';
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),8000);
+},500);
+</script>
+</body>
+</html>
